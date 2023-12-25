@@ -1,10 +1,6 @@
 import csv
 
-student_data = [
-    {"name": "Андрей", "surname": "Попов", "grade": 5, "project_id": "1"},
-    {"name": "Степан", "surname": "Васильев", "grade": None, "project_id": "2"},
-    {"name": "Владимир", "surname": "Хадаров", "grade": 4, "project_id": "3"}
-]
+
 
 def calculate_average_grade(grades):
     """
@@ -57,10 +53,26 @@ def readCSV():
     return student_data
 
 
+def sort(student_data, key):
+
+    """
+    алгоритм сортировки вставками
+    """
+    for i in range(1, len(student_data)):
+        currentValue = student_data[i]
+        position = i
+
+        while position > 0 and student_data(position -1)[key] > currentValue[key]:
+            student_data[position] = student_data[position - 1]
+            position -= 1
+
+    return student_data[::-1]
+
+
+
 
 def main():
-    clear_data = process_student_data(student_data)
-    save_to_csv(clear_data, "student_new.csv")
+    pass
 
     # for student in clear_data:
 
