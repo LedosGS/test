@@ -42,6 +42,22 @@ def save_to_csv(student_data, filename):
         writer.writeheader()
         writer.writerow(student_data)
 
+
+def readCSV():
+    """
+    читаем csv файл
+    """
+
+    student_data = []
+
+    with open(file_path, mode="r") as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            student_data.append(row)
+    return student_data
+
+
+
 def main():
     clear_data = process_student_data(student_data)
     save_to_csv(clear_data, "student_new.csv")
